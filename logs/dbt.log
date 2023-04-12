@@ -1,0 +1,148 @@
+
+
+============================== 2023-04-12 20:57:45.332758 | ff4218a2-8b34-41b6-81da-54be088e78bc ==============================
+[0m20:57:45.332758 [info ] [MainThread]: Running with dbt=1.4.5
+[0m20:57:45.333683 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/grgmadden/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': 'first-project', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m20:57:45.334012 [debug] [MainThread]: Tracking: tracking
+[0m20:57:45.357442 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b8cdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b8c850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b93640>]}
+[0m20:58:18.948759 [debug] [MainThread]: Starter project path: /Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m20:58:19.185226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bb6670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bb64f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bb6790>]}
+[0m20:58:19.185606 [debug] [MainThread]: Flushing usage events
+[0m20:58:19.336606 [error] [MainThread]: Encountered an error:
+mapping values are not allowed here
+  in "/Users/grgmadden/.dbt/profiles.yml", line 7, column 12
+[0m20:58:19.404655 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 136, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 206, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 253, in run_from_args
+    results = task.run()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 302, in run
+    if not self.check_if_can_write_profile(profile_name=project_name):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 201, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/Users/grgmadden/.dbt/profiles.yml", line 7, column 12
+
+
+
+============================== 2023-04-12 21:01:15.731993 | c723d2b9-c3f4-4760-bcdd-6842e6b82efa ==============================
+[0m21:01:15.731993 [info ] [MainThread]: Running with dbt=1.4.5
+[0m21:01:15.733169 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/grgmadden/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': True, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m21:01:15.733378 [debug] [MainThread]: Tracking: tracking
+[0m21:01:15.753000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102eb2400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064f6250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106511eb0>]}
+[0m21:01:15.753728 [info ] [MainThread]: To view your profiles.yml file, run:
+
+open /Users/grgmadden/.dbt
+[0m21:01:15.754056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102eb2400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064eadf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106511eb0>]}
+[0m21:01:15.754223 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-04-12 21:12:01.998985 | 8e891e98-602f-4d22-9a39-2cfabac5b3ef ==============================
+[0m21:12:01.998985 [info ] [MainThread]: Running with dbt=1.4.5
+[0m21:12:01.999814 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/grgmadden/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': 'DS5559_LAB', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m21:12:01.999958 [debug] [MainThread]: Tracking: tracking
+[0m21:12:02.019665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106058f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060585b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10605f6d0>]}
+[0m21:12:02.025743 [debug] [MainThread]: Starter project path: /Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m21:12:02.086861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060825e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106082460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106082700>]}
+[0m21:12:02.087203 [debug] [MainThread]: Flushing usage events
+[0m21:12:02.179428 [error] [MainThread]: Encountered an error:
+mapping values are not allowed here
+  in "/Users/grgmadden/.dbt/profiles.yml", line 7, column 12
+[0m21:12:02.185984 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 136, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 206, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/main.py", line 253, in run_from_args
+    results = task.run()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 302, in run
+    if not self.check_if_can_write_profile(profile_name=project_name):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 201, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+  File "/Users/grgmadden/opt/anaconda3/lib/python3.9/site-packages/yaml/scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/Users/grgmadden/.dbt/profiles.yml", line 7, column 12
+
+
+
+============================== 2023-04-12 21:13:38.233304 | 9c5bf89b-23e6-4df7-8bae-ad6b2c88e4df ==============================
+[0m21:13:38.233304 [info ] [MainThread]: Running with dbt=1.4.5
+[0m21:13:38.234167 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/grgmadden/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': 'DS5559_LAB', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m21:13:38.234314 [debug] [MainThread]: Tracking: tracking
+[0m21:13:38.259786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114258f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1142585b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11425f6d0>]}
+[0m21:13:38.261189 [info ] [MainThread]: A project called DS5559_LAB already exists here.
+[0m21:13:38.261484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11425f9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1142585b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114258f10>]}
+[0m21:13:38.261654 [debug] [MainThread]: Flushing usage events
